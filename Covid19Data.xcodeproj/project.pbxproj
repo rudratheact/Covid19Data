@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		EF1D372B27C7D266004AA419 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1D372A27C7D266004AA419 /* AppDelegate.swift */; };
 		EF1D372D27C7D266004AA419 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1D372C27C7D266004AA419 /* SceneDelegate.swift */; };
-		EF1D372F27C7D266004AA419 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1D372E27C7D266004AA419 /* ViewController.swift */; };
 		EF1D373227C7D266004AA419 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF1D373027C7D266004AA419 /* Main.storyboard */; };
 		EF1D373527C7D266004AA419 /* Covid19Data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EF1D373327C7D266004AA419 /* Covid19Data.xcdatamodeld */; };
 		EF1D373727C7D268004AA419 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF1D373627C7D268004AA419 /* Assets.xcassets */; };
@@ -34,7 +33,6 @@
 		EF1D372727C7D266004AA419 /* Covid19Data.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Covid19Data.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF1D372A27C7D266004AA419 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF1D372C27C7D266004AA419 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EF1D372E27C7D266004AA419 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EF1D373127C7D266004AA419 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EF1D373427C7D266004AA419 /* Covid19Data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Covid19Data.xcdatamodel; sourceTree = "<group>"; };
 		EF1D373627C7D268004AA419 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -47,12 +45,12 @@
 		EF1D374527C7D2AA004AA419 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		EF1D374627C7D2AA004AA419 /* BrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowserViewController.swift; sourceTree = "<group>"; };
 		EF1D374D27C7DBC1004AA419 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
-		EF1D374F27C7DE64004AA419 /* CasesEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CasesEntity+CoreDataClass.swift"; path = "Covid19Data/CasesEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		EF1D375027C7DE64004AA419 /* CasesEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CasesEntity+CoreDataProperties.swift"; path = "Covid19Data/CasesEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		EF1D375127C7DE64004AA419 /* TestsEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "TestsEntity+CoreDataClass.swift"; path = "Covid19Data/TestsEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		EF1D375227C7DE64004AA419 /* TestsEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "TestsEntity+CoreDataProperties.swift"; path = "Covid19Data/TestsEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		EF1D375327C7DE64004AA419 /* StatesEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "StatesEntity+CoreDataClass.swift"; path = "Covid19Data/StatesEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		EF1D375427C7DE64004AA419 /* StatesEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "StatesEntity+CoreDataProperties.swift"; path = "Covid19Data/StatesEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		EF1D374F27C7DE64004AA419 /* CasesEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CasesEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		EF1D375027C7DE64004AA419 /* CasesEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CasesEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		EF1D375127C7DE64004AA419 /* TestsEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TestsEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		EF1D375227C7DE64004AA419 /* TestsEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TestsEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		EF1D375327C7DE64004AA419 /* StatesEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StatesEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		EF1D375427C7DE64004AA419 /* StatesEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StatesEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		EF1D375B27C7DF3B004AA419 /* GetCompleteData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetCompleteData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,12 +68,6 @@
 		EF1D371E27C7D266004AA419 = {
 			isa = PBXGroup;
 			children = (
-				EF1D374F27C7DE64004AA419 /* CasesEntity+CoreDataClass.swift */,
-				EF1D375027C7DE64004AA419 /* CasesEntity+CoreDataProperties.swift */,
-				EF1D375127C7DE64004AA419 /* TestsEntity+CoreDataClass.swift */,
-				EF1D375227C7DE64004AA419 /* TestsEntity+CoreDataProperties.swift */,
-				EF1D375327C7DE64004AA419 /* StatesEntity+CoreDataClass.swift */,
-				EF1D375427C7DE64004AA419 /* StatesEntity+CoreDataProperties.swift */,
 				EF1D372927C7D266004AA419 /* Covid19Data */,
 				EF1D372827C7D266004AA419 /* Products */,
 			);
@@ -92,24 +84,61 @@
 		EF1D372927C7D266004AA419 /* Covid19Data */ = {
 			isa = PBXGroup;
 			children = (
-				EF1D372A27C7D266004AA419 /* AppDelegate.swift */,
-				EF1D372C27C7D266004AA419 /* SceneDelegate.swift */,
-				EF1D372E27C7D266004AA419 /* ViewController.swift */,
-				EF1D374627C7D2AA004AA419 /* BrowserViewController.swift */,
-				EF1D374127C7D2A9004AA419 /* CaseTableViewCell.swift */,
-				EF1D374427C7D2AA004AA419 /* CaseTableViewCell.xib */,
-				EF1D374527C7D2AA004AA419 /* DetailsViewController.swift */,
-				EF1D374227C7D2A9004AA419 /* MainViewController.swift */,
-				EF1D374327C7D2AA004AA419 /* StaticInfo.swift */,
-				EF1D375B27C7DF3B004AA419 /* GetCompleteData.swift */,
-				EF1D374D27C7DBC1004AA419 /* CoreDataStack.swift */,
-				EF1D373027C7D266004AA419 /* Main.storyboard */,
+				EF1D376027C82695004AA419 /* Support */,
+				EF1D375D27C8265B004AA419 /* Model */,
+				EF1D375E27C82667004AA419 /* View */,
+				EF1D375F27C82681004AA419 /* ViewController */,
 				EF1D373627C7D268004AA419 /* Assets.xcassets */,
-				EF1D373827C7D268004AA419 /* LaunchScreen.storyboard */,
 				EF1D373B27C7D268004AA419 /* Info.plist */,
 				EF1D373327C7D266004AA419 /* Covid19Data.xcdatamodeld */,
 			);
 			path = Covid19Data;
+			sourceTree = "<group>";
+		};
+		EF1D375D27C8265B004AA419 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EF1D375B27C7DF3B004AA419 /* GetCompleteData.swift */,
+				EF1D374F27C7DE64004AA419 /* CasesEntity+CoreDataClass.swift */,
+				EF1D375027C7DE64004AA419 /* CasesEntity+CoreDataProperties.swift */,
+				EF1D375127C7DE64004AA419 /* TestsEntity+CoreDataClass.swift */,
+				EF1D375227C7DE64004AA419 /* TestsEntity+CoreDataProperties.swift */,
+				EF1D375327C7DE64004AA419 /* StatesEntity+CoreDataClass.swift */,
+				EF1D375427C7DE64004AA419 /* StatesEntity+CoreDataProperties.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EF1D375E27C82667004AA419 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EF1D374127C7D2A9004AA419 /* CaseTableViewCell.swift */,
+				EF1D374427C7D2AA004AA419 /* CaseTableViewCell.xib */,
+				EF1D373027C7D266004AA419 /* Main.storyboard */,
+				EF1D373827C7D268004AA419 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EF1D375F27C82681004AA419 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EF1D374627C7D2AA004AA419 /* BrowserViewController.swift */,
+				EF1D374527C7D2AA004AA419 /* DetailsViewController.swift */,
+				EF1D374227C7D2A9004AA419 /* MainViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		EF1D376027C82695004AA419 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				EF1D372A27C7D266004AA419 /* AppDelegate.swift */,
+				EF1D372C27C7D266004AA419 /* SceneDelegate.swift */,
+				EF1D374327C7D2AA004AA419 /* StaticInfo.swift */,
+				EF1D374D27C7DBC1004AA419 /* CoreDataStack.swift */,
+			);
+			path = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,7 +215,6 @@
 			files = (
 				EF1D375C27C7DF3B004AA419 /* GetCompleteData.swift in Sources */,
 				EF1D375527C7DE64004AA419 /* CasesEntity+CoreDataClass.swift in Sources */,
-				EF1D372F27C7D266004AA419 /* ViewController.swift in Sources */,
 				EF1D374C27C7D2AA004AA419 /* BrowserViewController.swift in Sources */,
 				EF1D373527C7D266004AA419 /* Covid19Data.xcdatamodeld in Sources */,
 				EF1D375827C7DE64004AA419 /* TestsEntity+CoreDataProperties.swift in Sources */,
