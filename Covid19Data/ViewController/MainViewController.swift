@@ -190,14 +190,27 @@ class MainViewController: UIViewController {
 extension MainViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var num = 0
-        if segmentedControl.selectedSegmentIndex == 0{
-            num = StaticInfo.shared.completeData?.casesTimeSeries.count ?? 0
-        }
-        if segmentedControl.selectedSegmentIndex == 1{
-            num = StaticInfo.shared.completeData?.statewise.count ?? 0
-        }
-        if segmentedControl.selectedSegmentIndex == 2{
-            num = StaticInfo.shared.completeData?.tested.count ?? 0
+        if StaticInfo.shared.isConnectedToNetwork(){
+            if segmentedControl.selectedSegmentIndex == 0{
+                num = StaticInfo.shared.completeData?.casesTimeSeries.count ?? 0
+            }
+            if segmentedControl.selectedSegmentIndex == 1{
+                num = StaticInfo.shared.completeData?.statewise.count ?? 0
+            }
+            if segmentedControl.selectedSegmentIndex == 2{
+                num = StaticInfo.shared.completeData?.tested.count ?? 0
+            }
+            
+        }else{
+            if segmentedControl.selectedSegmentIndex == 0{
+                num = casesFromCoreData.count
+            }
+            if segmentedControl.selectedSegmentIndex == 1{
+                num = statesFromCoreData.count
+            }
+            if segmentedControl.selectedSegmentIndex == 2{
+                num = testsFromCoreData.count
+            }
         }
         return num
     }
@@ -206,48 +219,107 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: StaticInfo.shared.caseTableViewCell, for: indexPath) as! CaseTableViewCell
         
         cell.stack5View.isHidden = true
-
-        // Cases
-        if segmentedControl.selectedSegmentIndex == 0{
-            for i in casesFromCoreData{
-                if let dateInCD = i.value(forKey: "date") as? String,
-                   let dateInAPI = StaticInfo.shared.completeData?.casesTimeSeries[indexPath.row].date,
-                   dateInCD == dateInAPI{
-                    print(dateInCD)
-                    cell.starImage.image = UIImage.init(systemName: "star.fill")
+        
+        if StaticInfo.shared.isConnectedToNetwork(){ // Online
+            
+            cell.starImage.image = UIImage.init(systemName: "star")
+            // Cases
+            if segmentedControl.selectedSegmentIndex == 0{
+                for i in casesFromCoreData{
+                    if let dateInCD = i.value(forKey: "date") as? String,
+                       let dateInAPI = StaticInfo.shared.completeData?.casesTimeSeries[indexPath.row].date,
+                       dateInCD == dateInAPI{
+                        print(dateInCD)
+                        cell.starImage.image = UIImage.init(systemName: "star.fill")
+                    }
                 }
+                cell.stack1Label.text = DecoratedText.date.rawValue
+                cell.stack1Data.setTitle(StaticInfo.shared.completeData?.casesTimeSeries[indexPath.row].date, for: .normal)
+                cell.stack2Label.text = DecoratedText.totalconfirmed.rawValue
+                cell.stack2Data.setTitle(StaticInfo.shared.completeData?.casesTimeSeries[indexPath.row].totalconfirmed, for: .normal)
+                cell.stack3Label.text = DecoratedText.totaldeceased.rawValue
+                cell.stack3Data.setTitle(StaticInfo.shared.completeData?.casesTimeSeries[indexPath.row].totaldeceased, for: .normal)
+                cell.stack4Label.text = DecoratedText.totalrecovered.rawValue
+                cell.stack4Data.setTitle(StaticInfo.shared.completeData?.casesTimeSeries[indexPath.row].totalrecovered, for: .normal)
             }
-            cell.stack1Label.text = DecoratedText.date.rawValue
-            cell.stack1Data.setTitle(StaticInfo.shared.completeData?.casesTimeSeries[indexPath.row].date, for: .normal)
-            cell.stack2Label.text = DecoratedText.totalconfirmed.rawValue
-            cell.stack2Data.setTitle(StaticInfo.shared.completeData?.casesTimeSeries[indexPath.row].totalconfirmed, for: .normal)
-            cell.stack3Label.text = DecoratedText.totaldeceased.rawValue
-            cell.stack3Data.setTitle(StaticInfo.shared.completeData?.casesTimeSeries[indexPath.row].totaldeceased, for: .normal)
-            cell.stack4Label.text = DecoratedText.totalrecovered.rawValue
-            cell.stack4Data.setTitle(StaticInfo.shared.completeData?.casesTimeSeries[indexPath.row].totalrecovered, for: .normal)
-        }
-        // States
-        if segmentedControl.selectedSegmentIndex == 1{
-            cell.stack1Label.text = DecoratedText.state.rawValue
-            cell.stack1Data.setTitle(StaticInfo.shared.completeData?.statewise[indexPath.row].state, for: .normal)
-            cell.stack2Label.text = DecoratedText.active.rawValue
-            cell.stack2Data.setTitle(StaticInfo.shared.completeData?.statewise[indexPath.row].active, for: .normal)
-            cell.stack3Label.text = DecoratedText.recovered.rawValue
-            cell.stack3Data.setTitle(StaticInfo.shared.completeData?.statewise[indexPath.row].recovered, for: .normal)
-            cell.stack4Label.text = DecoratedText.deaths.rawValue
-            cell.stack4Data.setTitle(StaticInfo.shared.completeData?.statewise[indexPath.row].deaths, for: .normal)
-        }
-        // Tests
-        if segmentedControl.selectedSegmentIndex == 2{
-            cell.stack5View.isHidden = false
-            cell.stack1Label.text = DecoratedText.testedasof.rawValue
-            cell.stack1Data.setTitle(StaticInfo.shared.completeData?.tested[indexPath.row].testedasof, for: .normal)
-            cell.stack2Label.text = DecoratedText.dailyrtpcrsamplescollectedicmrapplication.rawValue
-            cell.stack2Data.setTitle(StaticInfo.shared.completeData?.tested[indexPath.row].dailyrtpcrsamplescollectedicmrapplication, for: .normal)
-            cell.stack3Label.text = DecoratedText.samplereportedtoday.rawValue
-            cell.stack3Data.setTitle(StaticInfo.shared.completeData?.tested[indexPath.row].samplereportedtoday, for: .normal)
-            cell.stack4Label.text = DecoratedText.totaldosesadministered.rawValue
-            cell.stack4Data.setTitle(StaticInfo.shared.completeData?.tested[indexPath.row].totaldosesadministered, for: .normal)
+            // States
+            if segmentedControl.selectedSegmentIndex == 1{
+                for i in statesFromCoreData{
+                    if let stateInCD = i.value(forKey: "state") as? String,
+                       let stateInAPI = StaticInfo.shared.completeData?.statewise[indexPath.row].state,
+                       stateInCD == stateInAPI{
+                        print(stateInCD)
+                        cell.starImage.image = UIImage.init(systemName: "star.fill")
+                    }
+                }
+                cell.stack1Label.text = DecoratedText.state.rawValue
+                cell.stack1Data.setTitle(StaticInfo.shared.completeData?.statewise[indexPath.row].state, for: .normal)
+                cell.stack2Label.text = DecoratedText.active.rawValue
+                cell.stack2Data.setTitle(StaticInfo.shared.completeData?.statewise[indexPath.row].active, for: .normal)
+                cell.stack3Label.text = DecoratedText.recovered.rawValue
+                cell.stack3Data.setTitle(StaticInfo.shared.completeData?.statewise[indexPath.row].recovered, for: .normal)
+                cell.stack4Label.text = DecoratedText.deaths.rawValue
+                cell.stack4Data.setTitle(StaticInfo.shared.completeData?.statewise[indexPath.row].deaths, for: .normal)
+            }
+            // Tests
+            if segmentedControl.selectedSegmentIndex == 2{
+                for i in testsFromCoreData{
+                    if let testedasofInCD = i.value(forKey: "testedasof") as? String,
+                       let testedasofInAPI = StaticInfo.shared.completeData?.tested[indexPath.row].testedasof,
+                       testedasofInCD == testedasofInAPI{
+                        print(testedasofInCD)
+                        cell.starImage.image = UIImage.init(systemName: "star.fill")
+                    }
+                }
+                cell.stack5View.isHidden = false
+                cell.stack1Label.text = DecoratedText.testedasof.rawValue
+                cell.stack1Data.setTitle(StaticInfo.shared.completeData?.tested[indexPath.row].testedasof, for: .normal)
+                cell.stack2Label.text = DecoratedText.dailyrtpcrsamplescollectedicmrapplication.rawValue
+                cell.stack2Data.setTitle(StaticInfo.shared.completeData?.tested[indexPath.row].dailyrtpcrsamplescollectedicmrapplication, for: .normal)
+                cell.stack3Label.text = DecoratedText.samplereportedtoday.rawValue
+                cell.stack3Data.setTitle(StaticInfo.shared.completeData?.tested[indexPath.row].samplereportedtoday, for: .normal)
+                cell.stack4Label.text = DecoratedText.totaldosesadministered.rawValue
+                cell.stack4Data.setTitle(StaticInfo.shared.completeData?.tested[indexPath.row].totaldosesadministered, for: .normal)
+            }
+        }else{ // Offline
+            cell.starImage.image = UIImage.init(systemName: "star.fill")
+            // Cases
+            if segmentedControl.selectedSegmentIndex == 0{
+                
+                cell.stack1Label.text = DecoratedText.date.rawValue
+                cell.stack1Data.setTitle(casesFromCoreData[indexPath.row].value(forKey: "date") as? String, for: .normal)
+                cell.stack2Label.text = DecoratedText.totalconfirmed.rawValue
+                cell.stack2Data.setTitle(casesFromCoreData[indexPath.row].value(forKey: "totalconfirmed") as? String, for: .normal)
+                cell.stack3Label.text = DecoratedText.totaldeceased.rawValue
+                cell.stack3Data.setTitle(casesFromCoreData[indexPath.row].value(forKey: "totaldeceased") as? String, for: .normal)
+                cell.stack4Label.text = DecoratedText.totalrecovered.rawValue
+                cell.stack4Data.setTitle(casesFromCoreData[indexPath.row].value(forKey: "totalrecovered") as? String, for: .normal)
+            }
+            // States
+            if segmentedControl.selectedSegmentIndex == 1{
+                
+                cell.stack1Label.text = DecoratedText.state.rawValue
+                cell.stack1Data.setTitle(statesFromCoreData[indexPath.row].value(forKey: "state") as? String, for: .normal)
+                cell.stack2Label.text = DecoratedText.active.rawValue
+                cell.stack2Data.setTitle(statesFromCoreData[indexPath.row].value(forKey: "active") as? String, for: .normal)
+                cell.stack3Label.text = DecoratedText.recovered.rawValue
+                cell.stack3Data.setTitle(statesFromCoreData[indexPath.row].value(forKey: "recovered") as? String, for: .normal)
+                cell.stack4Label.text = DecoratedText.deaths.rawValue
+                cell.stack4Data.setTitle(statesFromCoreData[indexPath.row].value(forKey: "deaths") as? String, for: .normal)
+            }
+            // Tests
+            if segmentedControl.selectedSegmentIndex == 2{
+                
+                cell.stack5View.isHidden = false
+                cell.stack1Label.text = DecoratedText.testedasof.rawValue
+                cell.stack1Data.setTitle(testsFromCoreData[indexPath.row].value(forKey: "testedasof") as? String, for: .normal)
+                cell.stack2Label.text = DecoratedText.dailyrtpcrsamplescollectedicmrapplication.rawValue
+                cell.stack2Data.setTitle(testsFromCoreData[indexPath.row].value(forKey: "dailyrtpcrsamplescollectedicmrapplication") as? String, for: .normal)
+                cell.stack3Label.text = DecoratedText.samplereportedtoday.rawValue
+                cell.stack3Data.setTitle(testsFromCoreData[indexPath.row].value(forKey: "samplereportedtoday") as? String, for: .normal)
+                cell.stack4Label.text = DecoratedText.totaldosesadministered.rawValue
+                cell.stack4Data.setTitle(testsFromCoreData[indexPath.row].value(forKey: "totaldosesadministered") as? String, for: .normal)
+            }
         }
         
         // On button tapped
