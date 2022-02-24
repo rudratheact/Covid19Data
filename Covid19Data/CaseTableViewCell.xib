@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="CaseTableViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="CaseTableViewCell" rowHeight="130" id="KGk-i7-Jjw" customClass="CaseTableViewCell" customModule="Covid19Stats" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="130"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="130"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DSl-6o-6aa">
+                        <rect key="frame" x="5" y="5" width="310" height="120"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="X9K-wg-35P">
+                                <rect key="frame" x="5" y="5" width="245" height="110"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JTH-9E-HNT">
+                                        <rect key="frame" x="0.0" y="0.0" width="245" height="18"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QjM-eB-TiU">
+                                                <rect key="frame" x="0.0" y="0.0" width="38.5" height="18"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggm-l4-1XE">
+                                                <rect key="frame" x="38.5" y="0.0" width="206.5" height="18"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                                <color key="tintColor" systemColor="labelColor"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="India">
+                                                    <color key="titleColor" systemColor="labelColor"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uRt-Jq-DHj">
+                                        <rect key="frame" x="0.0" y="23" width="245" height="18"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8ar-mf-b7C">
+                                                <rect key="frame" x="0.0" y="0.0" width="38.5" height="18"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0HW-7q-LB9">
+                                                <rect key="frame" x="38.5" y="0.0" width="206.5" height="18"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                                <color key="tintColor" systemColor="labelColor"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Click to view">
+                                                    <color key="titleColor" systemColor="labelColor"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2LU-Ku-G3M">
+                                        <rect key="frame" x="0.0" y="46" width="245" height="18"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aaG-SF-2hk">
+                                                <rect key="frame" x="0.0" y="0.0" width="38.5" height="18"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BbP-4K-jfg">
+                                                <rect key="frame" x="38.5" y="0.0" width="206.5" height="18"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                                <color key="tintColor" systemColor="labelColor"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Click to view">
+                                                    <color key="titleColor" systemColor="labelColor"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Lc-MX-Ofb">
+                                        <rect key="frame" x="0.0" y="69" width="245" height="18"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vvx-tc-nni">
+                                                <rect key="frame" x="0.0" y="0.0" width="38.5" height="18"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dtC-Dy-nuP">
+                                                <rect key="frame" x="38.5" y="0.0" width="206.5" height="18"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                                <color key="tintColor" systemColor="labelColor"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Click to view">
+                                                    <color key="titleColor" systemColor="labelColor"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nr1-di-37u" userLabel="Link Stack View">
+                                        <rect key="frame" x="0.0" y="92" width="245" height="18"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Source : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D7U-Va-uJe">
+                                                <rect key="frame" x="0.0" y="0.0" width="61.5" height="18"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dap-09-1pG">
+                                                <rect key="frame" x="61.5" y="0.0" width="183.5" height="18"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Click to view"/>
+                                                <connections>
+                                                    <action selector="linkButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="fQj-wA-3lh"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="7N8-Mj-Vbo">
+                                <rect key="frame" x="255" y="34.5" width="50" height="50"/>
+                                <color key="tintColor" systemColor="systemGrayColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="S3t-g2-cR8"/>
+                                    <constraint firstAttribute="width" constant="50" id="zUK-n4-Mcy"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z3h-fF-5MV">
+                                <rect key="frame" x="255" y="35" width="50" height="50"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <connections>
+                                    <action selector="favButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ZVd-Id-gW3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="z3h-fF-5MV" firstAttribute="bottom" secondItem="7N8-Mj-Vbo" secondAttribute="bottom" id="5wn-qw-hQ1"/>
+                            <constraint firstItem="X9K-wg-35P" firstAttribute="top" secondItem="DSl-6o-6aa" secondAttribute="top" constant="5" id="9Gy-gW-CCH"/>
+                            <constraint firstItem="z3h-fF-5MV" firstAttribute="trailing" secondItem="7N8-Mj-Vbo" secondAttribute="trailing" id="H7V-aw-Dl1"/>
+                            <constraint firstItem="7N8-Mj-Vbo" firstAttribute="leading" secondItem="X9K-wg-35P" secondAttribute="trailing" constant="5" id="Q3l-Nr-Vx2"/>
+                            <constraint firstItem="7N8-Mj-Vbo" firstAttribute="centerY" secondItem="DSl-6o-6aa" secondAttribute="centerY" id="V5h-jR-ma9"/>
+                            <constraint firstItem="z3h-fF-5MV" firstAttribute="top" secondItem="7N8-Mj-Vbo" secondAttribute="top" id="ccV-Cb-3jY"/>
+                            <constraint firstAttribute="bottom" secondItem="X9K-wg-35P" secondAttribute="bottom" constant="5" id="gkN-U5-g6C"/>
+                            <constraint firstItem="z3h-fF-5MV" firstAttribute="leading" secondItem="7N8-Mj-Vbo" secondAttribute="leading" id="hII-k9-FEE"/>
+                            <constraint firstItem="X9K-wg-35P" firstAttribute="leading" secondItem="DSl-6o-6aa" secondAttribute="leading" constant="5" id="hsu-FW-TeE"/>
+                            <constraint firstAttribute="trailing" secondItem="7N8-Mj-Vbo" secondAttribute="trailing" constant="5" id="j87-Wb-CYg"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="DSl-6o-6aa" secondAttribute="bottom" constant="5" id="16V-vU-yhQ"/>
+                    <constraint firstItem="DSl-6o-6aa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="UIT-VQ-xrO"/>
+                    <constraint firstItem="DSl-6o-6aa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="c9C-Fz-CP0"/>
+                    <constraint firstAttribute="trailing" secondItem="DSl-6o-6aa" secondAttribute="trailing" constant="5" id="etE-n2-woe"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="favButton" destination="z3h-fF-5MV" id="mn8-s3-O2u"/>
+                <outlet property="stack1Data" destination="ggm-l4-1XE" id="yhH-H4-fZl"/>
+                <outlet property="stack1Label" destination="QjM-eB-TiU" id="4uP-UJ-DAN"/>
+                <outlet property="stack2Data" destination="0HW-7q-LB9" id="kD9-W3-82x"/>
+                <outlet property="stack2Label" destination="8ar-mf-b7C" id="IvT-H1-6Dv"/>
+                <outlet property="stack3Data" destination="BbP-4K-jfg" id="UWW-jo-19X"/>
+                <outlet property="stack3Label" destination="aaG-SF-2hk" id="E0E-xd-rQC"/>
+                <outlet property="stack4Data" destination="dtC-Dy-nuP" id="59g-iQ-A5N"/>
+                <outlet property="stack4Label" destination="Vvx-tc-nni" id="fel-wg-kkh"/>
+                <outlet property="stack5LinkButton" destination="dap-09-1pG" id="6tf-4q-1ZI"/>
+                <outlet property="stack5View" destination="Nr1-di-37u" id="acx-NQ-8By"/>
+                <outlet property="starImage" destination="7N8-Mj-Vbo" id="efN-X5-2eF"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="141.29464285714286"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="star" catalog="system" width="128" height="116"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,4 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19206" systemVersion="21C52" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CasesEntity" representedClassName="CasesEntity" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="String"/>
+        <attribute name="totalconfirmed" optional="YES" attributeType="String"/>
+        <attribute name="totaldeceased" optional="YES" attributeType="String"/>
+        <attribute name="totalrecovered" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="StatesEntity" representedClassName="StatesEntity" syncable="YES">
+        <attribute name="active" optional="YES" attributeType="String"/>
+        <attribute name="deaths" optional="YES" attributeType="String"/>
+        <attribute name="recovered" optional="YES" attributeType="String"/>
+        <attribute name="state" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="TestsEntity" representedClassName="TestsEntity" syncable="YES">
+        <attribute name="dailyrtpcrsamplescollectedicmrapplication" optional="YES" attributeType="String"/>
+        <attribute name="samplereportedtoday" optional="YES" attributeType="String"/>
+        <attribute name="testedasof" optional="YES" attributeType="String"/>
+        <attribute name="totaldosesadministered" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="CasesEntity" positionX="-63" positionY="-18" width="128" height="89"/>
+        <element name="StatesEntity" positionX="-54" positionY="-9" width="128" height="89"/>
+        <element name="TestsEntity" positionX="-36" positionY="9" width="128" height="89"/>
+    </elements>
 </model>
